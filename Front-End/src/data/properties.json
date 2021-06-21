@@ -1,0 +1,32 @@
+[
+  { "Id" : 1,
+    "Name" : "First",
+    "Type" : "House",
+    "Price" : 1000000
+  },
+  { "Id" : 2,
+    "Name" : "Second",
+    "Type" : "House",
+    "Price" : 1000000
+  },
+  { "Id" : 3,
+    "Name" : "Third",
+    "Type" : "House",
+    "Price" : 1000000
+  },
+  { "Id" : 4,
+    "Name" : "Forth",
+    "Type" : "House",
+    "Price" : 1000000
+  },
+  { "Id" : 5,
+    "Name" : "Fifth",
+    "Type" : "House",
+    "Price" : 1000000
+  },
+  { "Id" : 6,
+    "Name" : "Sixth",
+    "Type" : "House",
+    "Price" : 1000000
+  }
+]
