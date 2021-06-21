@@ -1,30 +1,41 @@
 [
   { "Id" : 1,
+    "SellRent" : 2,
     "Name" : "First",
     "Type" : "House",
-    "Price" : 1000000
+    "Price" : 1000000,
+    "Image" : "https://mathisonarchitects.com/wp-content/uploads/2017/04/mathison-lake-house-4j.jpg"
   },
   { "Id" : 2,
+    "SellRent" : 2,
     "Name" : "Second",
     "Type" : "House",
-    "Price" : 1000000
+    "Price" : 1000000,
+    "Image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgX4btgeihMgd_w--wl_oUtZojflWvQiD3bkQPHN0QaiV6kix9wrxh1DHSRAdwTuNm9W8&usqp=CAU"
   },
   { "Id" : 3,
+    "SellRent" : 1,
     "Name" : "Third",
     "Type" : "House",
-    "Price" : 1000000
+    "Price" : 1000000,
+    "Image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJfcIzg5l0hQHtAU6ZCCdnZI5OXH0zBpZ_u_Va1Ce5ZHO4ppYFWaJIUBCAZ1BuQ7llaDk&usqp=CAU"
   },
   { "Id" : 4,
+    "SellRent" : 1,
     "Name" : "Forth",
     "Type" : "House",
-    "Price" : 1000000
+    "Price" : 1000000,
+    "Image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrdpKRNzAvzZs2WRTA-j_kgEhXb7DtVMU1h5gbIMq-r1H7daNAItLiI5vUkKOrf7zX1mc&usqp=CAU"
   },
   { "Id" : 5,
+    "SellRent" : 1,
     "Name" : "Fifth",
     "Type" : "House",
-    "Price" : 1000000
+    "Price" : 1000000,
+    "Image" : "https://livinator.com/wp-content/uploads/2016/10/most-luxurious-houses-22.jpg"
   },
   { "Id" : 6,
+    "SellRent" : 1,
     "Name" : "Sixth",
     "Type" : "House",
     "Price" : 1000000

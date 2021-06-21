@@ -8,18 +8,30 @@ import { PropertyCardComponent } from './property/property-card/property-card.co
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {HttpClientModule} from '@angular/common/http'
+import { AddPropertyComponent } from './property/add-property/add-property.component';
+import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
+import { FormsModule } from '@angular/forms';
 
+// import { Routes, RouterModule } from '@angular/router';
+
+
+// const appRoutes: Routes = [
+
+// ]
 
 @NgModule({
   declarations: [
     AppComponent,
     PropertyCardComponent,
     PropertyListComponent,
-      NavBarComponent
+      NavBarComponent,
+      AddPropertyComponent,
+      PropertyDetailComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [
