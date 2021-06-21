@@ -10,7 +10,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {HttpClientModule} from '@angular/common/http'
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
 
 // import { Routes, RouterModule } from '@angular/router';
 
@@ -24,14 +26,17 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     PropertyCardComponent,
     PropertyListComponent,
-      NavBarComponent,
-      AddPropertyComponent,
-      PropertyDetailComponent
+    NavBarComponent,
+    AddPropertyComponent,
+    PropertyDetailComponent,
+    UserLoginComponent,
+    UserRegisterComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [
