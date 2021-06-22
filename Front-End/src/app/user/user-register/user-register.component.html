@@ -9,21 +9,37 @@
         <div class="form-group col-12">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" formControlName="userName">
+            <span *ngIf="!userName.valid && userName.touched" class="error-block">
+              <span *ngIf="userName.errors!.required">Please provide Name</span>
+              <span *ngIf="userName.errors!.minlength">Name should be of atleast 5 char long</span>
+            </span>
         </div>
 
         <div class="form-group col-12">
           <label for="email" class="form-label">Email</label>
           <input type="text" class="form-control"  formControlName="email">
+          <span *ngIf="!email.valid && email.touched" class="error-block">
+            <span *ngIf="email.hasError('required')">Please provide Email address</span>
+            <span *ngIf="email.errors!.email">Please provide valid Email address</span>
+          </span>
         </div>
 
         <div class="form-group col-12">
           <label for="passwrod" class="form-label">Password</label>
           <input type="text" class="form-control"  formControlName="password">
+          <span *ngIf="!password.valid && password.touched" class="error-block">
+            <span *ngIf="password.hasError('required')">Please provide Password</span>
+            <span *ngIf="password.errors!.minlength">Please provide valid Password</span>
+          </span>
         </div>
 
         <div class="form-group col-12">
           <label for="cpassword" class="form-label">Confirm Password</label>
-          <input type="text" class="form-control"  formControlName="confirmPassword">
+          <input [class.is-invalid]="registerationForm.errors?.notmatched" type="text" class="form-control"  formControlName="confirmPassword">
+          <span *ngIf="confirmPassword.touched" class="error-block">
+            <span *ngIf="confirmPassword.hasError('required')">Please confirm Password</span>
+            <span *ngIf="registerationForm.errors?.notmatched && confirmPassword.valid">Password does not matched</span>
+          </span>
         </div>
 
         <div class="form-group col-12">
