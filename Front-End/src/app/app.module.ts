@@ -16,8 +16,10 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
 import { UserService } from './services/user.service';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlertifyService } from './services/alertify.service';
 import { ToasterService } from './services/toastr.service';
+import { AuthService } from './services/auth.service';
 
 // import { Routes, RouterModule } from '@angular/router';
 
@@ -44,13 +46,15 @@ import { ToasterService } from './services/toastr.service';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [
     HousingService,
     UserService,
     AlertifyService,
-    ToasterService
+    ToasterService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
