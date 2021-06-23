@@ -9,7 +9,7 @@
 }
 
 .card:hover img{
-  transform: sca  le(1.2,1.2);
+  transform: scale(1.2,1.2);
   transition-duration: 500ms;
   transition-timing-function: ease-out;
   height: 250px;
