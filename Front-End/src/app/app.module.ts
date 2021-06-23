@@ -13,6 +13,11 @@ import { PropertyDetailComponent } from './property/property-detail/property-det
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserService } from './services/user.service';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlertifyService } from './services/alertify.service';
+import { ToasterService } from './services/toastr.service';
 
 // import { Routes, RouterModule } from '@angular/router';
 
@@ -30,17 +35,22 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
     AddPropertyComponent,
     PropertyDetailComponent,
     UserLoginComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
-    HousingService
+    HousingService,
+    UserService,
+    AlertifyService,
+    ToasterService
   ],
   bootstrap: [AppComponent]
 })

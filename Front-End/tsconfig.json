@@ -16,6 +16,11 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "typeRoots" : [
+      "node_modules/@types",
+      "node_modules/ngx-toastr/toastr.css",
+      "src/alertify.d.ts"
+    ],
     "lib": [
       "es2018",
       "dom"

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validator, Validators } from '@angular/forms';
+import { User } from 'src/app/model/user';
 import { PasswordValidator } from 'src/app/services/password.validator';
+import { UserService } from 'src/app/services/user.service';
+import { ToasterService } from 'src/app/services/toastr.service';
+import { AlertifyService } from 'src/app/services/alertify.service';
 
 @Component({
   selector: 'app-user-register',
@@ -10,8 +14,9 @@ import { PasswordValidator } from 'src/app/services/password.validator';
 export class UserRegisterComponent implements OnInit {
 
   registerationForm!: FormGroup;
-  user: any = {};
-  constructor(private fg: FormBuilder) { }
+  user!: User;
+  userSubmitted!: boolean;
+  constructor(private fb: FormBuilder, private userService: UserService, private toastr: ToasterService, private alertify: AlertifyService) { }
 
   ngOnInit() {
     // this.registerationForm = new FormGroup({
@@ -27,7 +32,7 @@ export class UserRegisterComponent implements OnInit {
   }
 
   createRegistrationForm() {
-    this.registerationForm = this.fg.group({
+    this.registerationForm = this.fb.group({
       userName: new FormControl(null, [Validators.required, Validators.minLength(5)]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
@@ -57,24 +62,27 @@ export class UserRegisterComponent implements OnInit {
 
   onSubmit() {
     console.log(this.registerationForm);
-    // debugger;
-    let temp = this.registerationForm.value;
-    this.user = Object.assign(this.user, this.registerationForm);
-    this.addUser(this.user, temp.email);
+    this.userSubmitted = true;
+    // this.user = Object.assign(this.user, this.registerationForm);
+    debugger;
+    if(this.registerationForm.valid) {
+      this.userService.addUser(this.userData());
+      this.registerationForm.reset();
+      this.userSubmitted = false;
+      // this.alertify.success('Successfully Registerd', 'Done');
+      this.toastr.success("Successfully Registered", "Done");
+    } else {
+      // this.alertify.error('Please provide valid details', 'Error');
+      this.toastr.error("Please provide valid details", "Error");
+    }
   }
 
-  addUser(new_user: any, new_string: string) {
-     let users: any[] = [];
-    // if(localStorage.getItem('Users') === null) {
-    //   users = [new_user];
-    // } else{
-    //   debugger;
-
-    //   users = JSON.parse(localStorage.getItem('Users') || '{}');
-    //   // users = [new_user, ...users];
-    // }
-    debugger;
-    users.push(new_user);
-    localStorage.setItem(new_string, JSON.stringify(users.values()));
+  userData(): User {
+    return this.user = {
+      userName: this.userName.value,
+      email: this.email.value,
+      password: this.password.value,
+      mobile: this.mobile.value
+    }
   }
 }
