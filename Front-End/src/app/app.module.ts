@@ -21,6 +21,8 @@ import { AlertifyService } from './services/alertify.service';
 import { ToasterService } from './services/toastr.service';
 import { AuthService } from './services/auth.service';
 
+import { TabsModule } from 'ngx-bootstrap/tabs';
+
 // import { Routes, RouterModule } from '@angular/router';
 
 
@@ -47,7 +49,8 @@ import { AuthService } from './services/auth.service';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot()
   ],
   providers: [
     HousingService,
