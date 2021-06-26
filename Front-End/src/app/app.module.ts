@@ -20,6 +20,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlertifyService } from './services/alertify.service';
 import { ToasterService } from './services/toastr.service';
 import { AuthService } from './services/auth.service';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
@@ -50,7 +51,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     BsDropdownModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    ButtonsModule.forRoot()
   ],
   providers: [
     HousingService,

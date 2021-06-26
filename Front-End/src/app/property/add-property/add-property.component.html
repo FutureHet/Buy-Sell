@@ -7,14 +7,35 @@
       <div>
         <tabset type="pills" #formTabs>
           <tab heading="Basic Info">
-
-              <div class="form-group col-12">
-                  <input type="radio" name="SellRent">
-                  <label class="m-2">Sell</label>
-
-                  <input type="radio" name="SellRent">
-                  <label class="m-2">Rent</label>
+            <div class="form-group col-12 align-items-center ">
+              <p>I want to</p>
+              <div class="btn-group" btnRadioGroup>
+                <label class="btn btn-outline-primary me-2" btnRadio=1 role="button" name="SellRent">Sell</label>
+                <label class="btn btn-outline-primary" btnRadio=2 role="button" name="SellRent">Rent</label>
               </div>
+            </div>
+
+            <div class="form-group col-12 align-items-center ">
+              <p>BHK</p>
+              <div class="btn-group" btnRadioGroup>
+                <label
+                *ngFor ="let bhk of ['1','2','3','4']"
+                class="btn btn-outline-primary me-2"
+                [btnRadio] = "bhk"
+                tabindex="0" role="button" name="SellRent">{{bhk}}</label>
+              </div>
+            </div>
+
+            <div class="form-group col-12 align-items-center ">
+              <p>Type</p>
+              <div class="btn-group" btnRadioGroup>
+                <label
+                *ngFor ="let bhk of ['1','2','3','4']"
+                class="btn btn-outline-primary me-2"
+                [btnRadio] = "bhk"
+                tabindex="0" role="button" name="SellRent">{{bhk}}</label>
+              </div>
+            </div>
 
               <div class="form-group col-12">
                 <label for="name">Name</label>
@@ -26,11 +47,11 @@
               </div>
 
 
-              <div class="form-group col-12">
+              <!-- <div class="form-group col-12">
                 <label for="type">Type</label>
                 <input type="text" class="form-control" #propType="ngModel" ngModel name="Type" required>
                 <span *ngIf="!propType.valid && propType.touched" class="error-block">Please provide Type</span>
-              </div>
+              </div> -->
 
 
               <div class="form-group col-12">
@@ -168,8 +189,8 @@
 
             <div class="form-group col-12 mt-2  d-grid">
               <button type="button" class="btn btn-primary" (click)="selectTab(3)">Back</button>
-              <button type="submit" class="btn btn-primary" (click)="selectTab(3)">Submit</button>
               <button type="reset" class="btn btn-primary" (click)="selectTab(3)">Cancel</button>
+              <button type="submit" class="btn btn-primary" (click)="selectTab(3)">Submit</button>
             </div>
           </tab>
         </tabset>
