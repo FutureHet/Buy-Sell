@@ -1,6 +1,16 @@
 .card{
-  min-height: 380px;
+  min-height: 400px;
   /* width: 300px; */
+}
+
+.card-body h1 {
+  font-family: fantasy;
+  color: #0069d9;
+}
+
+.font-highlight {
+  font-style: italic;
+  color: red;
 }
 
 .card-img-wrapper{
