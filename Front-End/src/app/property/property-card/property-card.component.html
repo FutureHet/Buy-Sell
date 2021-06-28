@@ -1,7 +1,8 @@
-<div class="card">
+<div class="card ">
   <div class="card-img-wrapper">
     <img *ngIf="property.Image" class="card-img-top" src="{{property.Image}}">
     <img *ngIf="!property.Image" class="card-img-top" src="https://mathisonarchitects.com/wp-content/uploads/2017/04/mathison-lake-house-4j.jpg">
+
     <ul class="list-inline text-center member-icons animate">
       <li class="list-inline-item">
         <button class="btn btn-primary" routerLink="/property-detail/{{property.Id}}"><i class="far fa-edit"></i></button>

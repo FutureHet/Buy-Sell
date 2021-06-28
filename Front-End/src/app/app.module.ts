@@ -22,6 +22,8 @@ import { ToasterService } from './services/toastr.service';
 import { AuthService } from './services/auth.service';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
 // import { Routes, RouterModule } from '@angular/router';
@@ -52,7 +54,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     ToastrModule.forRoot(),
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [
     HousingService,

@@ -1,6 +1,6 @@
 .card{
-  height: 350px;
-  width: 300px;
+  min-height: 380px;
+  /* width: 300px; */
 }
 
 .card-img-wrapper{
