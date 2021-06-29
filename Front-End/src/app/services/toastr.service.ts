@@ -15,4 +15,8 @@ constructor(private toastr: ToastrService) { }
   error(message: string, title?: string){
     this.toastr.error(message, title);
   }
+
+  warning(message: string, title?: string){
+    this.toastr.warning(message, title);
+  }
 }

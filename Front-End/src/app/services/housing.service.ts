@@ -23,6 +23,17 @@ export class HousingService {
         //   var specificData = data[e - 1];
         //   propertiesArray.push(specificData);
         // });
+        let rec_property = JSON.parse(localStorage.getItem('newProp')!);
+
+        if(rec_property !== null) {
+          for (const id in rec_property) {
+            if (rec_property.hasOwnProperty(id) && rec_property[id].SellRent === SellRent) {
+              propertiesArray.push(rec_property[id]);
+            }
+          }
+        }
+
+
 
         for (const id in data) {
           if (data.hasOwnProperty(id) && data[id].SellRent === SellRent) {
@@ -35,6 +46,21 @@ export class HousingService {
   }
 
   addProperty(property: Property) {
-    localStorage.setItem('newProp', JSON.stringify(property));
+      // localStorage.setItem('newProp', JSON.stringify(property));
+      // let properties = [property];
+      let rec_property: any[] = JSON.parse(localStorage.getItem('newProp')!) || [];
+      rec_property.push(property);
+      // debugger;
+      localStorage.setItem('newProp', JSON.stringify(rec_property));
+  }
+
+  newPropID() {
+    if(localStorage.getItem('PID')) {
+        localStorage.setItem('PID', String(Number(localStorage.getItem('PID')) +1));
+        return Number(localStorage.getItem('PID'));
+    } else {
+      localStorage.setItem('PID', '101');
+      return 101;
+    }
   }
 }
