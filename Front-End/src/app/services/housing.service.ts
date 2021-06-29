@@ -10,7 +10,9 @@ import { Property } from '../model/property';
 })
 export class HousingService {
 
-  constructor(private http: HttpClient) { }
+constructor(private http: HttpClient) { }
+
+
 
   getAllProperties(SellRent: number): Observable<IPropertyBase[]>{
     return this.http.get('data/properties.json').pipe(
