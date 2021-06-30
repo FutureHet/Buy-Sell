@@ -6,6 +6,7 @@ import { IPropertyBase } from '../model/ipropertybase';
 import { Property } from '../model/property';
 import { getSafePropertyAccessString } from '@angular/compiler';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,19 +14,22 @@ export class HousingService {
 
 constructor(private http: HttpClient) { }
 
-  getProperty(id: number) {
+  getProperty(id: number): Observable<Property> {
 
+    // throw new Error();
     return this.getAllProperties().pipe(
-      map(propertiesArray => {
+
+      map((propertiesArray: any) => {
+        // throw new Error("Some Error");
         return propertiesArray.find((p: any) => p.Id == id);
       })
     );
   }
 
-  getAllProperties(SellRent?: number): Observable<IPropertyBase[]>{
+  getAllProperties(SellRent?: number): Observable<Property[]>{
     return this.http.get('data/properties.json').pipe(
       map((data:any) => {
-        const propertiesArray: Array<IPropertyBase> = [];
+        const propertiesArray: Array<Property> = [];
         // const selectedList: Array<any> = [];
         // selectedList.push(2,4,6);
 
@@ -60,7 +64,9 @@ constructor(private http: HttpClient) { }
         }
         return propertiesArray;
       })
-    )
+    );
+
+    return this.http.get<Property[]>('data/properties.json');
   }
 
   addProperty(property: Property) {

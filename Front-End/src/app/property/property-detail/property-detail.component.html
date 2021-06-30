@@ -39,8 +39,8 @@
   <div class="col-sm-4 p-0">
     <div class="card">
       <div class="card-img-wrapper">
-        <img *ngIf="property.Image" class="card-img-top" src="assets/images/{{property.Image}}.png">
-        <img  class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5U6IH7woejOhcg6jOaXT_2METOKT3CGSh9g&usqp=CAU">
+        <img *ngIf="property.Image" class="card-img-top" src="{{property.Image}}">
+        <img *ngIf="!property.Image" class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5U6IH7woejOhcg6jOaXT_2METOKT3CGSh9g&usqp=CAU">
       </div>
       <div class="card-body">
         <h1 class="card-title">{{property.Name}}</h1>

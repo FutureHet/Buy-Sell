@@ -25,6 +25,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 
 // import { Routes, RouterModule } from '@angular/router';
 
@@ -62,7 +63,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     UserService,
     AlertifyService,
     ToasterService,
-    AuthService
+    AuthService,
+    PropertyDetailResolverService
   ],
   bootstrap: [AppComponent]
 })
