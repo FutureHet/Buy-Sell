@@ -27,6 +27,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { FilterPipe } from './Pipes/filter.pipe';
+import { SortPipe } from './Pipes/sort.pipe';
 
 // import { Routes, RouterModule } from '@angular/router';
 
@@ -45,6 +47,8 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     PropertyDetailComponent,
     UserLoginComponent,
     UserRegisterComponent,
+    FilterPipe,
+    SortPipe,
    ],
   imports: [
     BrowserModule,

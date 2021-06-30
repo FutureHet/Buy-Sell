@@ -11,6 +11,10 @@ import { IPropertyBase } from 'src/app/model/ipropertybase';
 export class PropertyListComponent implements OnInit {
   SellRent = 1;
   properties: Array<IPropertyBase> = [];
+  City = '';
+  SearchCity= '';
+  SortbyParam = '';
+  SortDirection = 'Low-High';
 
   constructor(private route: ActivatedRoute,private housingService: HousingService) { }
 
@@ -35,5 +39,16 @@ export class PropertyListComponent implements OnInit {
     );
   }
 
+  onCityFilter() {
+    this.SearchCity = this.City;
+  }
+
+  onSortDirection() {
+    if(this.SortDirection === 'High-Low') {
+      this.SortDirection = 'Low-High';
+    } else {
+      this.SortDirection = 'High-Low';
+    }
+  }
 }
 
