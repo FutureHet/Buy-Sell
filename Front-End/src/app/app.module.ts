@@ -30,6 +30,8 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { SortPipe } from './Pipes/sort.pipe';
 
+import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 // import { Routes, RouterModule } from '@angular/router';
 
 
@@ -72,6 +74,9 @@ import { SortPipe } from './Pipes/sort.pipe';
     AuthService,
     PropertyDetailResolverService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }

@@ -7,7 +7,8 @@ import { HousingService } from 'src/app/services/housing.service';
 @Component({
   selector: 'app-property-detail',
   templateUrl: './property-detail.component.html',
-  styleUrls: ['./property-detail.component.css']
+  styleUrls: ['./property-detail.component.css'],
+
 })
 export class PropertyDetailComponent implements OnInit {
 
