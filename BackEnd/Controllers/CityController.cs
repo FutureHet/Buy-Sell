@@ -16,9 +16,9 @@ namespace BackEnd.Controllers
         }
 
         [HttpGet]
-        public string getString()
+        public IEnumerable<string> getString()
         {
-            return "First thing using .net core";
+            return new string[] {"First thing using", " .net core"};
         }
     }
 }
