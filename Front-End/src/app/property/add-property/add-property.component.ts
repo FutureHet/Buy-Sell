@@ -23,7 +23,7 @@ export class AddPropertyComponent implements OnInit {
 
   addPropertyForm!: FormGroup;
   nextClicked!: boolean;
-  cityList!: string[];
+  cityList!: any[];
   property = new Property();
 
   propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex']

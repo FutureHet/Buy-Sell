@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using BackEnd.Data;
 //using BackEnd.Models;
 
 namespace BackEnd.Controllers
@@ -11,14 +12,17 @@ namespace BackEnd.Controllers
     [ApiController]
     public class CityController : ControllerBase
     {
-        public CityController()
+        private readonly DataContext dc;
+        public CityController(DataContext dc)
         {
+            this.dc = dc;
         }
 
         [HttpGet]
-        public IEnumerable<string> getString()
+        public IActionResult GetCities()
         {
-            return new string[] {"First thing using", " .net core"};
+            var cities = dc.Cities.ToList();
+            return Ok(cities);
         }
     }
 }
